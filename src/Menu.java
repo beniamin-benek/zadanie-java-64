@@ -136,18 +136,18 @@ class Menu {
 
         DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern(pattern1);
         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern(pattern2);
-        LocalDateTime dataOddania;
+        LocalDateTime endDate;
 
         System.out.println("Dozwolone formaty: 2015-12-05 14:00 lub 05.12.2015 14:00.");
         String userInput = scanner.nextLine();
 
         try {
-            dataOddania = LocalDateTime.parse(userInput, formatter1);
-            return dataOddania;
+            endDate = LocalDateTime.parse(userInput, formatter1);
+            return endDate;
         } catch (DateTimeParseException e1) {
             try {
-                dataOddania = LocalDateTime.parse(userInput, formatter2);
-                return dataOddania;
+                endDate = LocalDateTime.parse(userInput, formatter2);
+                return endDate;
             } catch (DateTimeParseException e2) {
                 System.out.println("Podałeś datę w nieprawidłowym formacie.");
             }

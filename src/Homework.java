@@ -5,13 +5,13 @@ import java.time.format.DateTimeFormatter;
 class Homework {
 
     private int id;
-    private LocalDateTime dataOddania; //coś słabo z angielskim
+    private LocalDateTime endDate; //coś słabo z angielskim
     private String task;
 
-    public Homework(int id, LocalDateTime dataOddania, String task) {
-        if (id < 0 || dataOddania == null) throw new NullPointerException();
+    public Homework(int id, LocalDateTime endDate, String task) {
+        if (id < 0 || endDate == null) throw new NullPointerException();
         else {
-            this.dataOddania = dataOddania;
+            this.endDate = endDate;
             this.task = task;
             this.id = id;
         }
@@ -20,15 +20,15 @@ class Homework {
     @Override
     public String toString() {
         DateTimeFormatter dateTimeFormatter= DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
-        return "Zadanie domowe " + id + ":\n- polecenie: " + task + "\n- data oddania:" + dataOddania.format(dateTimeFormatter);
+        return "Zadanie domowe " + id + ":\n- polecenie: " + task + "\n- data oddania:" + endDate.format(dateTimeFormatter);
     }
 
     public LocalDateTime getDataOddania() {
-        return dataOddania;
+        return endDate;
     }
 
-    public void setDataOddania(LocalDateTime dataOddania) {
-        this.dataOddania = dataOddania;
+    public void setDataOddania(LocalDateTime endDate) {
+        this.endDate = endDate;
     }
 
     public String getTask() {
