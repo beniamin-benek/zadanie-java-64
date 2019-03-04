@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -20,7 +19,7 @@ class Homework {
     @Override
     public String toString() {
         DateTimeFormatter dateTimeFormatter= DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
-        return "Zadanie domowe " + id + ":\n- polecenie: " + task + "\n- data oddania:" + endDate.format(dateTimeFormatter);
+        return "Zadanie domowe " + id + ":\n- polecenie: " + task + "\n- termin oddania:" + endDate.format(dateTimeFormatter);
     }
 
     public LocalDateTime getDataOddania() {
